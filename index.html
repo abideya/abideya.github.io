@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
 
@@ -9,12 +8,22 @@
     <title>Eya Abid | Cloud & Infrastructure Network Engineer</title>
 
     <meta name="description"
-        content="Eya Abid - Cloud and Infrastructure Network Engineer interested in AWS, Azure, Networking, Docker, Kubernetes and OpenStack.">
+          content="Eya Abid — Cloud & Infrastructure Network Engineer from Tunisia. Networking, AWS, Azure, Docker, Kubernetes, OpenStack, Linux and IoT.">
 
     <meta name="author" content="Eya Abid">
 
     <meta name="keywords"
-        content="Eya Abid, Cloud Engineer, Network Engineer, AWS, Azure, Docker, Kubernetes, CCNA, OpenStack, Tunisia">
+          content="Eya Abid, Cloud Engineer, Network Engineer, Infrastructure Engineer, AWS, Azure, Docker, Kubernetes, OpenStack, Linux, CCNA, Tunisia">
+
+    <!-- Google / Social Preview -->
+    <meta property="og:title" content="Eya Abid | Cloud & Infrastructure Network Engineer">
+    <meta property="og:description"
+          content="Cloud, infrastructure, networking and IoT engineering portfolio of Eya Abid.">
+    <meta property="og:image" content="eya-abid.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="eya-abid.jpg">
 
     <style>
 
@@ -22,543 +31,867 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f7f9fc;
-            color: #172033;
-            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.7;
         }
 
-        /* NAVIGATION */
-
-        header {
-            background: white;
-            border-bottom: 1px solid #e5e7eb;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        a {
+            text-decoration: none;
+            color: inherit;
         }
+
+        /* NAVBAR */
 
         nav {
-            max-width: 1100px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 17, 32, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .nav-container {
+            max-width: 1150px;
             margin: auto;
             padding: 18px 25px;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        nav h2 {
-            font-size: 24px;
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #38bdf8;
         }
 
         .nav-links {
             display: flex;
             gap: 25px;
+            list-style: none;
         }
 
         .nav-links a {
-            text-decoration: none;
-            color: #172033;
-            font-weight: 500;
+            color: #cbd5e1;
+            font-size: 14px;
+            transition: 0.3s;
         }
 
         .nav-links a:hover {
-            text-decoration: underline;
+            color: #38bdf8;
         }
 
         /* HERO */
 
         .hero {
-            max-width: 1100px;
-            margin: auto;
-
-            min-height: 650px;
-
-            padding: 80px 25px;
-
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-
-            gap: 60px;
+            justify-content: center;
+            padding: 120px 25px 80px;
         }
 
-        .hero-text {
-            max-width: 650px;
-        }
-
-        .hello {
-            font-size: 14px;
-            letter-spacing: 3px;
-            font-weight: bold;
+        .hero-container {
+            max-width: 1150px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 70px;
+            align-items: center;
         }
 
         .hero h1 {
-            font-size: 64px;
-            margin: 10px 0;
+            font-size: clamp(45px, 7vw, 78px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
         }
 
         .hero h2 {
-            font-size: 28px;
+            font-size: 25px;
+            color: #94a3b8;
+            margin-bottom: 25px;
             font-weight: 500;
-            margin-bottom: 20px;
         }
 
-        .hero-description {
-            font-size: 18px;
-            color: #64748b;
+        .hero p {
+            max-width: 650px;
+            color: #cbd5e1;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 23px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #07111f;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #7dd3fc;
+        }
+
+        .btn-secondary {
+            border: 1px solid #334155;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
         }
 
         /* PHOTO */
 
-        .photo-container img {
-            width: 280px;
-            height: 280px;
-
-            object-fit: cover;
-
-            border-radius: 50%;
-
-            border: 8px solid white;
-
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
-        }
-
-        /* BUTTONS */
-
-        .buttons {
-            margin-top: 30px;
-
+        .photo-container {
             display: flex;
-            gap: 15px;
+            justify-content: center;
         }
 
-        .button {
-            display: inline-block;
-
-            padding: 12px 24px;
-
-            background: #172033;
-            color: white;
-
-            text-decoration: none;
-
-            border-radius: 8px;
-
-            font-weight: bold;
-        }
-
-        .button:hover {
-            opacity: 0.85;
-        }
-
-        .button.secondary {
-            background: white;
-            color: #172033;
-
-            border: 1px solid #172033;
+        .profile-photo {
+            width: 310px;
+            height: 310px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #38bdf8;
+            box-shadow: 0 0 50px rgba(56, 189, 248, 0.25);
         }
 
         /* SECTIONS */
 
-        section:not(.hero) {
-            max-width: 1000px;
+        section {
+            max-width: 1150px;
             margin: auto;
-
-            padding: 80px 25px;
+            padding: 100px 25px;
         }
 
-        section h2 {
-            font-size: 35px;
-            margin-bottom: 30px;
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .section-title span {
+            color: #38bdf8;
+        }
+
+        .section-intro {
+            color: #94a3b8;
+            max-width: 750px;
+            margin-bottom: 45px;
+        }
+
+        /* ABOUT */
+
+        .about-box {
+            background: #111827;
+            border: 1px solid #1e293b;
+            padding: 35px;
+            border-radius: 14px;
+        }
+
+        .about-box p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
         }
 
         /* SKILLS */
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
-        .skills span {
-            padding: 10px 18px;
+        .skill-card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
 
-            background: white;
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
 
-            border: 1px solid #e2e8f0;
+        .skill-card h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
 
-            border-radius: 30px;
+        .skill-card p {
+            color: #94a3b8;
+        }
+
+        /* EXPERIENCE */
+
+        .timeline {
+            border-left: 2px solid #38bdf8;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #38bdf8;
+            border-radius: 50%;
+            position: absolute;
+            left: -37px;
+            top: 8px;
+        }
+
+        .timeline-item h3 {
+            color: white;
+            font-size: 21px;
+        }
+
+        .timeline-item .date {
+            color: #38bdf8;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            color: #94a3b8;
         }
 
         /* PROJECTS */
 
-        .project {
-            background: white;
-
-            padding: 30px;
-
-            margin-bottom: 20px;
-
-            border-radius: 12px;
-
-            border: 1px solid #e2e8f0;
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
         }
 
-        .project h3 {
-            margin-bottom: 10px;
+        .project-card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 14px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #38bdf8;
+        }
+
+        .project-card h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+        }
+
+        .tags {
+            margin-top: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 4px;
+            border-radius: 5px;
+            background: #1e293b;
+            color: #cbd5e1;
+            font-size: 12px;
         }
 
         /* CERTIFICATIONS */
 
-        .certification {
-            background: white;
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
 
+        .cert {
+            background: #111827;
+            border: 1px solid #1e293b;
             padding: 25px;
+            border-radius: 12px;
+        }
 
-            margin-bottom: 15px;
+        .cert h3 {
+            color: white;
+        }
 
-            border-left: 4px solid #172033;
+        .cert p {
+            color: #94a3b8;
+        }
 
-            border-radius: 8px;
+        /* CONTACT */
+
+        .contact-box {
+            text-align: center;
+            background: #111827;
+            border: 1px solid #1e293b;
+            padding: 50px 25px;
+            border-radius: 15px;
+        }
+
+        .contact-box p {
+            color: #94a3b8;
+            margin: 15px auto 25px;
         }
 
         /* FOOTER */
 
         footer {
+            border-top: 1px solid #1e293b;
             text-align: center;
-
             padding: 30px;
-
-            background: #172033;
-
-            color: white;
+            color: #64748b;
         }
 
-        /* MOBILE */
+        /* RESPONSIVE */
 
-        @media (max-width: 700px) {
-
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
+        @media (max-width: 850px) {
 
             .nav-links {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
+                display: none;
             }
 
-            .hero {
-                flex-direction: column-reverse;
+            .hero-container {
+                grid-template-columns: 1fr;
                 text-align: center;
-
-                padding-top: 60px;
             }
 
-            .hero h1 {
-                font-size: 45px;
-            }
-
-            .hero h2 {
-                font-size: 22px;
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .buttons {
                 justify-content: center;
             }
 
-            .photo-container img {
-                width: 220px;
-                height: 220px;
+            .photo-container {
+                order: -1;
             }
 
+            .profile-photo {
+                width: 230px;
+                height: 230px;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .certifications {
+                grid-template-columns: 1fr;
+            }
         }
 
     </style>
-
 </head>
-
 
 <body>
 
+<!-- NAVIGATION -->
 
-    <!-- NAVIGATION -->
+<nav>
+    <div class="nav-container">
 
-    <header>
+        <div class="logo">EA.</div>
 
-        <nav>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
-            <h2>Eya Abid</h2>
-
-            <div class="nav-links">
-
-                <a href="#about">About</a>
-
-                <a href="#skills">Skills</a>
-
-                <a href="#projects">Projects</a>
-
-                <a href="#certifications">Certifications</a>
-
-                <a href="#contact">Contact</a>
-
-            </div>
-
-        </nav>
-
-    </header>
+    </div>
+</nav>
 
 
-    <!-- HERO -->
+<!-- HERO -->
 
-    <section class="hero">
+<header class="hero">
 
-        <div class="hero-text">
+    <div class="hero-container">
 
-            <p class="hello">HELLO, I'M</p>
+        <div>
 
-            <h1>Eya Abid</h1>
+            <h1>
+                Eya <span>Abid</span>
+            </h1>
 
-            <h2>Cloud & Infrastructure Network Engineer</h2>
+            <h2>
+                Cloud & Infrastructure Network Engineer
+            </h2>
 
-            <p class="hero-description">
-
-                Engineering student passionate about cloud infrastructure,
-                networking, DevOps and emerging technologies.
-
+            <p>
+                Engineering student specializing in cloud infrastructure,
+                computer networks and modern IT infrastructure.
+                Interested in AWS, Azure, Linux, Docker, Kubernetes,
+                OpenStack and network engineering.
             </p>
-
 
             <div class="buttons">
 
-                <a class="button"
-                    href="https://www.linkedin.com/in/eya-abid-4b7b86292/"
-                    target="_blank">
-
-                    LinkedIn
-
+                <a href="Eya-Abid-CV.pdf"
+                   class="btn btn-primary"
+                   target="_blank">
+                    Download CV
                 </a>
 
+                <a href="https://www.linkedin.com/in/eya-abid-4b7b86292/"
+                   class="btn btn-secondary"
+                   target="_blank">
+                    LinkedIn
+                </a>
 
-                <a class="button secondary"
-                    href="https://github.com/eyetteabid-cmyk"
-                    target="_blank">
-
+                <a href="https://github.com/eyetteabid-cmyk"
+                   class="btn btn-secondary"
+                   target="_blank">
                     GitHub
-
                 </a>
 
             </div>
 
         </div>
-
 
         <div class="photo-container">
 
             <img src="eya-abid.jpg"
-                alt="Eya Abid - Cloud and Infrastructure Network Engineer">
+                 alt="Eya Abid - Cloud and Infrastructure Network Engineer"
+                 class="profile-photo">
 
         </div>
 
-    </section>
+    </div>
+
+</header>
 
 
-    <!-- ABOUT -->
+<!-- ABOUT -->
 
-    <section id="about">
+<section id="about">
 
-        <h2>About Me</h2>
+    <h2 class="section-title">
+        About <span>Me</span>
+    </h2>
+
+    <p class="section-intro">
+        Cloud infrastructure, networking and emerging technologies.
+    </p>
+
+    <div class="about-box">
 
         <p>
-
             I am Eya Abid, an engineering student specializing in
             Cloud Infrastructure and Networks.
-
         </p>
-
-        <br>
 
         <p>
-
-            I am interested in cloud computing, networking,
-            infrastructure, DevOps, cybersecurity and emerging technologies.
-
+            My interests cover cloud computing, network infrastructure,
+            Linux systems, virtualization, DevOps technologies and
+            Internet of Things.
         </p>
-
-    </section>
-
-
-    <!-- SKILLS -->
-
-    <section id="skills">
-
-        <h2>Skills</h2>
-
-
-        <div class="skills">
-
-            <span>AWS</span>
-
-            <span>Microsoft Azure</span>
-
-            <span>Networking</span>
-
-            <span>CCNA</span>
-
-            <span>Docker</span>
-
-            <span>Kubernetes</span>
-
-            <span>Linux</span>
-
-            <span>OpenStack</span>
-
-            <span>Python</span>
-
-            <span>Cloud Infrastructure</span>
-
-            <span>IoT</span>
-
-            <span>Artificial Intelligence</span>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-
-    <section id="projects">
-
-        <h2>Projects</h2>
-
-
-        <div class="project">
-
-            <h3>Intelligent IoT Energy Monitoring</h3>
-
-            <p>
-
-                IoT-based energy monitoring and optimization platform
-                using Raspberry Pi, Modbus, Python, Edge Computing
-                and Machine Learning.
-
-            </p>
-
-        </div>
-
-
-        <div class="project">
-
-            <h3>Cloud Infrastructure</h3>
-
-            <p>
-
-                Practical work with AWS, OpenStack, Linux,
-                networking and cloud infrastructure.
-
-            </p>
-
-        </div>
-
-
-        <div class="project">
-
-            <h3>Networking</h3>
-
-            <p>
-
-                Network configuration, troubleshooting,
-                routing, switching, VLANs and TCP/IP.
-
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- CERTIFICATIONS -->
-
-    <section id="certifications">
-
-        <h2>Certifications</h2>
-
-
-        <div class="certification">
-
-            <strong>CCNA</strong>
-
-            <p>Cisco Certified Networking Associate</p>
-
-        </div>
-
-
-        <div class="certification">
-
-            <strong>Public Speaking</strong>
-
-            <p>Communication and public speaking certification</p>
-
-        </div>
-
-
-        <div class="certification">
-
-            <strong>English B1</strong>
-
-            <p>English language certification</p>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact">
-
-        <h2>Let's Connect</h2>
 
         <p>
-
-            Interested in cloud infrastructure, networking,
-            DevOps and emerging technologies?
-
+            I enjoy designing, deploying and troubleshooting technical
+            infrastructures while continuously developing my skills in
+            AWS, Azure, Docker, Kubernetes and OpenStack.
         </p>
 
-        <br>
+    </div>
 
-        <a class="button"
-            href="https://www.linkedin.com/in/eya-abid-4b7b86292/"
-            target="_blank">
-
-            Contact me on LinkedIn
-
-        </a>
-
-    </section>
+</section>
 
 
-    <!-- FOOTER -->
+<!-- SKILLS -->
 
-    <footer>
+<section id="skills">
 
-        <p>© 2026 Eya Abid. All rights reserved.</p>
+    <h2 class="section-title">
+        Technical <span>Skills</span>
+    </h2>
 
-    </footer>
+    <p class="section-intro">
+        Technologies and technical areas I work with and continuously develop.
+    </p>
 
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <h3>☁ Cloud</h3>
+            <p>
+                AWS · Azure · Cloud Infrastructure ·
+                EC2 · IAM · VPC · Lambda
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>🌐 Networking</h3>
+            <p>
+                TCP/IP · LAN/WAN · VLAN · Routing ·
+                Switching · Wi-Fi · Cisco · CCNA
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>⚙ DevOps</h3>
+            <p>
+                Docker · Kubernetes · Git · GitHub ·
+                CI/CD fundamentals
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>🖥 Systems</h3>
+            <p>
+                Linux · Windows · Virtualization ·
+                VMware · VirtualBox · Bash
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>🔧 Open Infrastructure</h3>
+            <p>
+                OpenStack · DevStack · Neutron ·
+                Nova · Cinder · Horizon
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>📡 IoT & Embedded</h3>
+            <p>
+                Raspberry Pi · ESP32 · Arduino ·
+                MQTT · Modbus · Python · C/C++
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <h2 class="section-title">
+        <span>Experience</span>
+    </h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="date">2025 – 2026</div>
+
+            <h3>
+                IoT & AI Engineering Intern — Treetronix
+            </h3>
+
+            <p>
+                Development of an intelligent IoT service for energy
+                monitoring and optimization using IoT sensors,
+                Modbus communication, Raspberry Pi, Python,
+                Edge Computing and Machine Learning.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="date">2024 – 2025</div>
+
+            <h3>
+                Service Manager — Tunisie Telecom
+            </h3>
+
+            <p>
+                Customer technical support related to Internet,
+                modem, bandwidth and GPON services.
+                Troubleshooting and incident management.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="date">2023 – 2024</div>
+
+            <h3>
+                Technical Support — Alarme Assistance
+            </h3>
+
+            <p>
+                Work related to alarm systems, intrusion detection,
+                CCTV and home automation technologies.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="date">2022 – 2023</div>
+
+            <h3>
+                Network Support — Tunisie Telecom
+            </h3>
+
+            <p>
+                Technical support and troubleshooting of network
+                and telecommunications incidents.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="section-title">
+        Selected <span>Projects</span>
+    </h2>
+
+    <p class="section-intro">
+        Practical projects combining networking, cloud,
+        infrastructure and IoT technologies.
+    </p>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+
+            <h3>
+                Intelligent Energy Monitoring & Optimization
+            </h3>
+
+            <p>
+                IoT-based energy supervision and optimization platform
+                combining Modbus, Raspberry Pi, Edge Computing,
+                Python and Machine Learning.
+            </p>
+
+            <div class="tags">
+                <span class="tag">IoT</span>
+                <span class="tag">Python</span>
+                <span class="tag">Raspberry Pi</span>
+                <span class="tag">Modbus</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Edge Computing</span>
+            </div>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>
+                OpenStack Cloud Infrastructure
+            </h3>
+
+            <p>
+                Deployment and troubleshooting of an OpenStack
+                environment using DevStack, including compute,
+                networking, storage and Horizon.
+            </p>
+
+            <div class="tags">
+                <span class="tag">OpenStack</span>
+                <span class="tag">DevStack</span>
+                <span class="tag">Neutron</span>
+                <span class="tag">Nova</span>
+                <span class="tag">Cinder</span>
+                <span class="tag">Linux</span>
+            </div>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>
+                AWS Cloud Labs
+            </h3>
+
+            <p>
+                Hands-on cloud infrastructure exercises involving
+                EC2, IAM, VPC, Lambda, security groups and
+                AWS services.
+            </p>
+
+            <div class="tags">
+                <span class="tag">AWS</span>
+                <span class="tag">EC2</span>
+                <span class="tag">IAM</span>
+                <span class="tag">VPC</span>
+                <span class="tag">Lambda</span>
+            </div>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>
+                Network Engineering Labs
+            </h3>
+
+            <p>
+                Network configuration and troubleshooting projects
+                involving routing, switching, VLANs, addressing,
+                Wireshark and Cisco technologies.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Cisco</span>
+                <span class="tag">CCNA</span>
+                <span class="tag">TCP/IP</span>
+                <span class="tag">VLAN</span>
+                <span class="tag">Wireshark</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+
+    <h2 class="section-title">
+        <span>Certifications</span> & Learning
+    </h2>
+
+    <div class="certifications">
+
+        <div class="cert">
+            <h3>CCNA</h3>
+            <p>
+                Cisco Certified Network Associate
+            </p>
+        </div>
+
+        <div class="cert">
+            <h3>AWS</h3>
+            <p>
+                Cloud computing and AWS infrastructure learning path
+            </p>
+        </div>
+
+        <div class="cert">
+            <h3>Microsoft Azure</h3>
+            <p>
+                Azure cloud infrastructure and services
+            </p>
+        </div>
+
+        <div class="cert">
+            <h3>Public Speaking</h3>
+            <p>
+                Communication and professional presentation
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="section-title">
+        Let's <span>Connect</span>
+    </h2>
+
+    <div class="contact-box">
+
+        <h2>
+            Interested in Cloud, Infrastructure & Networking?
+        </h2>
+
+        <p>
+            Feel free to connect with me for professional
+            opportunities, internships, collaborations and
+            technical projects.
+        </p>
+
+        <div class="buttons" style="justify-content:center;">
+
+            <a href="https://www.linkedin.com/in/eya-abid-4b7b86292/"
+               class="btn btn-primary"
+               target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="mailto:eyetteabid@gmail.com"
+               class="btn btn-secondary">
+                Email Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Eya Abid — Cloud & Infrastructure Network Engineer
+    </p>
+
+</footer>
 
 </body>
-
 </html>
